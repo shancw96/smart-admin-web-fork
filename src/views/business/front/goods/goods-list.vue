@@ -9,4 +9,10 @@
 -->
 <template>
   <h1>商品列表 - 前端用户展示</h1>
+  <div class="grid grid-cols-3 gap-12">
+    <GoodsListCard v-for="index in 6" :key="index" />
+  </div>
 </template>
+<script setup>
+  import GoodsListCard from '/@/views/business/front/goods/components/goods-list-card.vue';
+</script>
