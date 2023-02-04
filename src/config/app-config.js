@@ -15,15 +15,15 @@ export const appDefaultConfig = {
   // 侧边菜单宽度 ， 默认为200px
   sideMenuWidth: 200,
   // 菜单主题
-  sideMenuTheme: 'dark',
+  sideMenuTheme: 'light',
   // 标签页
   pageTagFlag: true,
   // 面包屑
   breadCrumbFlag: true,
   // 页脚
-  footerFlag: true,
+  footerFlag: false,
   // 帮助文档
-  helpDocFlag: true,
+  helpDocFlag: false,
   // 网站名称
-  websiteName: 'SmartAdmin 2.X',
+  websiteName: 'AI management system',
 };
