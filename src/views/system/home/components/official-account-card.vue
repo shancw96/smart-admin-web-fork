@@ -1,39 +1,27 @@
 <!--
   * 官方 二维码
-  * 
-  * @Author:    1024创新实验室-主任：卓大 
-  * @Date:      2022-09-12 22:34:00 
-  * @Wechat:    zhuda1024 
-  * @Email:     lab1024@163.com 
-  * @Copyright  1024创新实验室 （ https://1024lab.net ），Since 2012 
+  *
+  * @Author:    1024创新实验室-主任：卓大
+  * @Date:      2022-09-12 22:34:00
+  * @Wechat:    zhuda1024
+  * @Email:     lab1024@163.com
+  * @Copyright  1024创新实验室 （ https://1024lab.net ），Since 2012
   *
 -->
 <template>
-  <default-home-card icon="SmileTwoTone" title="添加微信，关注【小镇程序员】、【1024创新实验室】">
+  <default-home-card icon="SmileTwoTone" title="添加微信，关注xxx，获取最新消息！">
     <div class="app-qr-box">
       <div class="app-qr">
         <img :src="zhuoda" />
-        <span class="qr-desc strong"> 卓大的微信号！ </span>
-        <span class="qr-desc"> 骚扰卓大 :) </span>
-      </div>
-      <div class="app-qr">
-        <img :src="xiaozhen" />
-        <span class="qr-desc strong"> 小镇程序员 </span>
-        <span class="qr-desc"> 代码与生活，还有钱途 </span>
-      </div>
-      <div class="app-qr">
-        <img :src="lab1024" />
-        <span class="qr-desc strong"> 1024创新实验室 </span>
-        <span class="qr-desc"> 官方账号 </span>
+        <span class="qr-desc strong"> xxx的微信号！ </span>
+        <span class="qr-desc"> :) </span>
       </div>
     </div>
   </default-home-card>
 </template>
 <script setup>
   import DefaultHomeCard from '/@/views/system/home/components/default-home-card.vue';
-  import lab1024 from '/@/assets/images/1024lab/1024lab-gzh.jpg';
   import zhuoda from '/@/assets/images/1024lab/zhuoda-wechat.jpg';
-  import xiaozhen from '/@/assets/images/1024lab/xiaozhen-gzh.jpg';
 </script>
 <style lang="less" scoped>
   .app-qr-box {

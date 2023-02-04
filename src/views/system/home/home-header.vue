@@ -1,21 +1,16 @@
 <!--
   * 首页 用户头部信息
-  * 
-  * @Author:    1024创新实验室-主任：卓大 
-  * @Date:      2022-09-12 22:34:00 
-  * @Wechat:    zhuda1024 
-  * @Email:     lab1024@163.com 
-  * @Copyright  1024创新实验室 （ https://1024lab.net ），Since 2012 
+  *
+  * @Author:    1024创新实验室-主任：卓大
+  * @Date:      2022-09-12 22:34:00
+  * @Wechat:    zhuda1024
+  * @Email:     lab1024@163.com
+  * @Copyright  1024创新实验室 （ https://1024lab.net ），Since 2012
   *
 -->
 <template>
   <div class="user-header">
-    <a-page-header :title="welcomeSentence" :sub-title="departmentName" >
-      <template #tags>
-        <a-tag color="blue">努力工作</a-tag>
-        <a-tag color="success">主动 / 皮实 / 可靠 </a-tag>
-        <a-tag color="error">自省 / 精进 / 创新</a-tag>
-      </template>
+    <a-page-header :title="welcomeSentence" :sub-title="departmentName">
       <template #extra>
         <p>{{ dayInfo }}</p>
       </template>

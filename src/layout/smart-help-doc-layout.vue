@@ -1,11 +1,11 @@
 <!--
   *  帮助文档 layout
-  * 
-  * @Author:    1024创新实验室-主任：卓大 
-  * @Date:      2022-09-06 20:40:16 
-  * @Wechat:    zhuda1024 
-  * @Email:     lab1024@163.com 
-  * @Copyright  1024创新实验室 （ https://1024lab.net ），Since 2012 
+  *
+  * @Author:    1024创新实验室-主任：卓大
+  * @Date:      2022-09-06 20:40:16
+  * @Wechat:    zhuda1024
+  * @Email:     lab1024@163.com
+  * @Copyright  1024创新实验室 （ https://1024lab.net ），Since 2012
 -->
 <template>
   <!--
@@ -18,9 +18,9 @@
     <!-- 顶部头部信息 -->
     <a-layout-header class="layout-header">
       <a-row class="layout-header-title">
-          <img class="logo-img" :src="logoImg" />
-          <div class="title">{{ websiteName }}</div>
-          <div class="title">帮助文档</div>
+        <img class="logo-img" :src="logoImg" />
+        <div class="title">{{ websiteName }}</div>
+        <div class="title">帮助文档</div>
         <a-col class="avatar">
           <HeaderAvatar />
         </a-col>
