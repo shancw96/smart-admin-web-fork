@@ -1,49 +1,53 @@
 <template>
-  <a-table :columns="columns" :data-source="data" bordered>
-    <template #title>购买记录</template>
-    <template #bodyCell="{ column, text }">
-      <template v-if="column.dataIndex === 'name'">
-        <a>{{ text }}</a>
+  <div>
+    <a-table :columns="columns" :data-source="data" :pagination="false" @change="onRequest" bordered>
+      <template #title>购买记录</template>
+      <template #bodyCell="{ column, record }">
+        <template v-if="column.dataIndex === 'kind'">{{ dict[record.kind] ?? '未知' }}</template>
       </template>
-    </template>
-  </a-table>
+    </a-table>
+    <a-pagination size="small" :total="pageTotal" v-model:page-size="pageSize" v-model:current="pageCurrent" @change="onRequest" />
+  </div>
 </template>
 <script setup>
-  import { ref } from 'vue';
+  import { onMounted, reactive, ref } from 'vue';
+  import { goodsApi } from '/@/api/business/goods/goods-api';
+  const dict = {
+    GIFT_CARD: '礼品卡',
+  };
+  let columns = [
+    {
+      title: '套餐名称',
+      dataIndex: 'goodsName',
+    },
+    {
+      title: '金额',
+      dataIndex: 'cost',
+    },
+    {
+      title: '消费时间',
+      dataIndex: 'createTime',
+    },
+  ];
+  const data = ref([]);
 
-  let columns = ref([
-    {
-      title: 'Name',
-      dataIndex: 'name',
-    },
-    {
-      title: 'Cash Assets',
-      className: 'column-money',
-      dataIndex: 'money',
-    },
-    {
-      title: 'Address',
-      dataIndex: 'address',
-    },
-  ]);
-  const data = ref([
-    {
-      key: '1',
-      name: 'John Brown',
-      money: '￥300,000.00',
-      address: 'New York No. 1 Lake Park',
-    },
-    {
-      key: '2',
-      name: 'Jim Green',
-      money: '￥1,256,000.00',
-      address: 'London No. 1 Lake Park',
-    },
-    {
-      key: '3',
-      name: 'Joe Black',
-      money: '￥120,000.00',
-      address: 'Sidney No. 1 Lake Park',
-    },
-  ]);
+  let pageTotal = ref(0);
+  let pageSize = ref(5);
+  let pageCurrent = ref(1);
+
+  const onRequest = (...args) => {
+    goodsApi
+      .history({
+        pageNum: pageCurrent.value,
+        pageSize: pageSize.value,
+      })
+      .then((res) => {
+        data.value = res.data.list;
+        pageTotal.value = res.data.total;
+      });
+  };
+
+  onMounted(() => {
+    onRequest();
+  });
 </script>

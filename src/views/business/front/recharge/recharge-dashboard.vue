@@ -1,13 +1,13 @@
 <template>
   <div class="p-4">
     <div class="card-header rounded-md">
-      <div class="text-5xl font-bold">¥10.39</div>
+      <div class="text-5xl font-bold">¥{{ userStore.balance }}</div>
       <div>账号可用余额</div>
       <p class="py-4">描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息</p>
       <div class="grid grid-cols-1 gap-6 w-1/6">
-        <a-button ghost shape="round">支付宝</a-button>
-        <a-button ghost shape="round">微信</a-button>
-        <a-button ghost shape="round">礼品卡</a-button>
+        <RechargeGiftCardModalBtn />
+        <a-button disabled ghost shape="round">支付宝</a-button>
+        <a-button disabled ghost shape="round">微信</a-button>
       </div>
     </div>
     <div class="mt-10 grid grid-cols-2 gap-2">
@@ -19,6 +19,9 @@
 <script setup>
   import RechargeHistory from '/@/views/business/front/recharge/components/recharge-history.vue';
   import RechargeGoodsBuy from '/@/views/business/front/recharge/components/recharge-goods-buy.vue';
+  import RechargeGiftCardModalBtn from '/@/views/business/front/recharge/components/recharge-gift-card-modal-btn.vue';
+  import { useUserStore } from '/@/store/modules/system/user';
+  const userStore = useUserStore();
 </script>
 
 <style scoped>

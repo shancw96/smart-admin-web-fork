@@ -1,23 +1,35 @@
 <template>
   <div class="pricing pricing-highlight">
-    <div class="pricing-title">ID01-V3-Standard</div>
+    <div class="pricing-title">{{ data.goodsName }}</div>
     <div class="pricing-padding">
       <div class="pricing-price">
-        <div>¥17.90</div>
-        <div>套餐时长: 30 天 VIP3</div>
+        <div>¥{{ data.price }}</div>
+        <div>套餐时长: {{ data.duration }} 天</div>
       </div>
       <div class="pricing-details">
-        <div class="pricing-item" v-for="index in 3" :key="index">
-          <div class="pricing-item-icon"><i class="fas fa-gas-pump"></i></div>
-          <div class="pricing-item-label">一次性 125GB 流量(1倍率)</div>
-        </div>
+        <div class="pricing-item-icon"><i class="fas fa-gas-pump"></i></div>
+        <div class="pricing-item-label">{{ data.remark }}</div>
       </div>
     </div>
-    <div class="pricing-cta">
-      <a> 续费 <i class="fas fa-plus"></i> </a>
+    <div class="py-3 transition-all" @click="handleClick" :class="[loading ? 'disabled' : 'active']">
+      <span>购买</span>
     </div>
   </div>
 </template>
+<script setup>
+  import { toRef } from 'vue';
+  import { debounce } from 'lodash';
+
+  const props = defineProps(['data', 'loading']);
+  const emit = defineEmits(['click']);
+
+  const data = toRef(props, 'data');
+
+  const handleClick = debounce(() => {
+    if (props.loading) return;
+    emit('click', data.value);
+  }, 1000);
+</script>
 
 <style lang="css" scoped>
   .pricing {
@@ -105,5 +117,16 @@
   }
   .pricing .pricing-cta a:hover {
     background-color: #e3eaef;
+  }
+
+  .active {
+    background-color: #6777ef !important;
+    color: #fff !important;
+    cursor: pointer;
+  }
+  .disabled {
+    background-color: #949393 !important;
+    color: #fff !important;
+    cursor: not-allowed;
   }
 </style>

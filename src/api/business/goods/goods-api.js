@@ -28,4 +28,12 @@ export const goodsApi = {
   updateGoods: (param) => {
     return postRequest('/goods/update', param);
   },
+  // 购买商品
+  buy: (goodsId) => {
+    return postRequest(`/goods/buy/${goodsId}`);
+  },
+  // 查看当前用户购买商品的历史记录
+  history: (param) => {
+    return postRequest('/goods/history', param);
+  },
 };
