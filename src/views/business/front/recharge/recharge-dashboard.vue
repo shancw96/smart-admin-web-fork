@@ -1,7 +1,7 @@
 <template>
   <div class="p-4">
     <div class="card-header rounded-md">
-      <div class="text-5xl font-bold">¥{{ userStore.balance }}</div>
+      <div class="text-5xl font-bold">¥{{ balance }}</div>
       <div>账号可用余额</div>
       <p class="py-4">描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息</p>
       <div class="grid grid-cols-1 gap-6 w-1/6">
@@ -21,7 +21,19 @@
   import RechargeGoodsBuy from '/@/views/business/front/recharge/components/recharge-goods-buy.vue';
   import RechargeGiftCardModalBtn from '/@/views/business/front/recharge/components/recharge-gift-card-modal-btn.vue';
   import { useUserStore } from '/@/store/modules/system/user';
+  import {loginApi} from "/@/api/system/login/login-api";
+  import {onMounted, ref} from "vue";
   const userStore = useUserStore();
+
+  const balance = ref(0)
+
+  onMounted(() => {
+    loginApi.getLoginInfo().then(res => {
+      balance.value = res.data.balance;
+    })
+  })
+
+
 </script>
 
 <style scoped>
