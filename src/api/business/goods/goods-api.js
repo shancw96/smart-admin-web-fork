@@ -36,4 +36,7 @@ export const goodsApi = {
   history: (param) => {
     return postRequest('/goods/history', param);
   },
+  queryComboList: () => {
+    return getRequest('/goods/comboList');
+  },
 };

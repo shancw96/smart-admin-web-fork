@@ -9,7 +9,7 @@
   *
 -->
 <template>
-  <default-home-card icon="SmileTwoTone" title="添加微信，关注xxx，获取最新消息！">
+  <default-home-card icon="SmileTwoTone" title="添加微信/QQ，获取礼品卡！">
     <div class="app-qr-box">
       <div class="app-qr">
         <img :src="zhuoda" />

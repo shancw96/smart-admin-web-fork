@@ -1,5 +1,5 @@
 <template>
-  <div class="pricing pricing-highlight">
+  <div class="pricing pricing-highlight shadow-xl">
     <div class="pricing-title">{{ data.goodsName }}</div>
     <div class="pricing-padding">
       <div class="pricing-price">
@@ -12,33 +12,38 @@
       </div>
     </div>
     <div class="py-3 transition-all" @click="handleClick" :class="[loading ? 'disabled' : 'active']">
-      <span>购买</span>
+      <span>{{ data.isCombo ? '续费' : '新购' }}</span>
     </div>
   </div>
 </template>
 <script setup>
   import { toRef } from 'vue';
   import { debounce } from 'lodash';
+  import { Modal } from 'ant-design-vue';
 
   const props = defineProps(['data', 'loading']);
   const emit = defineEmits(['click']);
 
   const data = toRef(props, 'data');
 
-  const handleClick = debounce(() => {
+  const handleClick = () => {
     if (props.loading) return;
-    emit('click', data.value);
-  }, 1000);
+    Modal.confirm({
+      title: '确认购买',
+      content: `确认购买套餐【${data.value.goodsName}】吗？`,
+      onOk: debounce(() => {
+        emit('click', data.value);
+      }, 500),
+    });
+  };
 </script>
 
 <style lang="css" scoped>
   .pricing {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
     background-color: #fff;
     border-radius: 3px;
     border: none;
     position: relative;
-    margin-bottom: 30px;
     text-align: center;
   }
   .pricing.pricing-highlight .pricing-title {
