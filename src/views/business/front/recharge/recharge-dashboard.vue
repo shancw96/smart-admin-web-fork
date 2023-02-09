@@ -3,8 +3,8 @@
     <div class="card-header rounded-md">
       <div class="text-5xl font-bold">¥{{ balance }}</div>
       <div>账号可用余额</div>
-      <p class="py-4">描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息</p>
-      <div class="grid grid-cols-1 gap-6 w-1/6">
+<!--      <p class="py-4">描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息描述信息</p>-->
+      <div class="grid grid-cols-1 gap-6 w-1/6 pt-4">
         <RechargeGiftCardModalBtn />
         <a-button disabled ghost shape="round">支付宝</a-button>
         <a-button disabled ghost shape="round">微信</a-button>
@@ -36,7 +36,7 @@
 
 </script>
 
-<style scoped>
+<style scoped lang="less">
   .card-header {
     padding: 40px;
     background-image: linear-gradient(to bottom, #fb966e, #95a0f4);

@@ -23,6 +23,8 @@ export const useUserStore = defineStore({
     employeeId: '',
     // 用户余额
     balance: 0,
+    // 用户密钥
+    secretKey: '',
     //登录名
     loginName: '',
     //姓名
@@ -118,6 +120,7 @@ export const useUserStore = defineStore({
       this.loginName = data.loginName;
       this.actualName = data.actualName;
       this.balance = data.balance;
+      this.secretKey = data.secretKey;
       this.phone = data.phone;
       this.departmentId = data.departmentId;
       this.departmentName = data.departmentName;

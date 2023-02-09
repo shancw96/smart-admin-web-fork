@@ -24,7 +24,7 @@
       </div>
     </CommonInfoCard>
 
-    <CommonInfoCard title="唯一token" remain="jjjjjaaa123jkkk__123-13" icon="BarcodeOutlined" @click="copyToken">
+    <CommonInfoCard title="唯一token" remain="*************" icon="BarcodeOutlined" @click="copyToken">
       <div class="text-gray-500 font-bold">
         <div>
           <a-button type="link" size="small"> >点击复制</a-button>
@@ -70,7 +70,9 @@
   import { goodsApi } from '/@/api/business/goods/goods-api';
   import { loginApi } from '/@/api/system/login/login-api';
   import { useRouter } from 'vue-router';
+  import {useUserStore} from "/@/store/modules/system/user";
 
+  const userStore = useUserStore();
   let goodsRemainList = ref([]);
   let userInfo = ref({});
 
@@ -112,7 +114,7 @@
       if (navigator && navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(str);
       return Promise.reject('The Clipboard API is not available.');
     };
-    copyToClipboard('asdjalsdj123123kjsd').then(() => {
+    copyToClipboard(useUserStore().secretKey).then(() => {
       message.success('复制成功');
     });
   }
