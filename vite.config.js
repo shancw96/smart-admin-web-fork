@@ -9,6 +9,7 @@
  */
 import { resolve } from 'path';
 import vue from '@vitejs/plugin-vue';
+import viteCompression from 'vite-plugin-compression';
 
 const pathResolve = (dir) => {
   return resolve(__dirname, '.', dir);
@@ -39,7 +40,7 @@ export default {
     host: '0.0.0.0',
     port: 8081,
   },
-  plugins: [vue()],
+  plugins: [vue(), viteCompression()],
   optimizeDeps: {
     include: ['ant-design-vue/es/locale/zh_CN', 'dayjs/locale/zh-cn', 'ant-design-vue/es/locale/en_US'],
     exclude: ['vue-demi'],
