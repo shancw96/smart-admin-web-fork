@@ -19,7 +19,7 @@
 <script setup>
   import RechargeHistory from '/@/views/business/front/recharge/components/recharge-history.vue';
   import RechargeGoodsBuy from '/@/views/business/front/recharge/components/recharge-goods-buy.vue';
-  import RechargeGiftCardModalBtn from '/@/views/business/front/recharge/components/recharge-gift-card-modal-btn.vue';
+  import RechargeGiftCardModalBtn from '/@/views/business/front/recharge/components/recharge-gift-card-modal-use-btn.vue';
   import { useUserStore } from '/@/store/modules/system/user';
   import {loginApi} from "/@/api/system/login/login-api";
   import {onMounted, ref} from "vue";
