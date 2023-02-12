@@ -157,12 +157,12 @@
       dataIndex: 'goodsName',
     },
     {
-      title: '商品状态',
-      dataIndex: 'goodsStatus',
+      title: '商品时常',
+      dataIndex: 'duration',
     },
     {
-      title: '产地',
-      dataIndex: 'place',
+      title: '商品状态',
+      dataIndex: 'goodsStatus',
     },
     {
       title: '商品价格',

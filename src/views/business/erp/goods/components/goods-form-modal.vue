@@ -16,11 +16,13 @@
       <a-form-item label="商品名称" name="goodsName">
         <a-input v-model:value="form.goodsName" placeholder="请输入商品名称" />
       </a-form-item>
+      <a-form-item label="商品CODE" name="goodsName">
+        <a-input v-model:value="form.goodsCode" placeholder="请输入商品CODE, category-name-subname" />
+      </a-form-item><a-form-item label="商品时常" name="duration">
+        <a-input v-model:value="form.duration" placeholder="请输入商品的时常, 30, 90, 365, 99999" />
+      </a-form-item>
       <a-form-item label="商品状态" name="goodsStatus">
         <SmartEnumSelect enum-name="GOODS_STATUS_ENUM" v-model:value="form.goodsStatus" />
-      </a-form-item>
-      <a-form-item label="产地" name="place">
-        <DictSelect key-code="GODOS_PLACE" v-model:value="form.place" />
       </a-form-item>
       <a-form-item label="上架状态" name="shelvesFlag">
         <a-radio-group v-model:value="form.shelvesFlag">
@@ -77,10 +79,12 @@
     categoryId: undefined,
     //商品名称
     goodsName: undefined,
+    // 商品code
+    goodsCode: undefined,
+    // 商品时常: 0,
+    duration: 0,
     //商品状态
     goodsStatus: GOODS_STATUS_ENUM.APPOINTMENT.value,
-    //产地
-    place: undefined,
     //商品价格
     price: undefined,
     //上架状态
@@ -96,7 +100,8 @@
     goodsName: [{ required: true, message: '商品名称不能为空' }],
     goodsStatus: [{ required: true, message: '商品状态不能为空' }],
     price: [{ required: true, message: '商品价格不能为空' }],
-    place: [{ required: true, message: '产地不能为空' }],
+    duration: [{ required: true, message: '商品时常不能为空' }],
+    goodsCode: [{ required: true, message: '商品唯一码不能为空' }],
   };
   // 是否展示抽屉
   const visible = ref(false);
