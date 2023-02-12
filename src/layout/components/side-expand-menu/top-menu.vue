@@ -12,7 +12,7 @@
     <!-- 顶部logo区域 -->
     <div class="logo" @click="onGoHome">
       <img class="logo-img" :src="logoImg" />
-      <div class="title">SmartAdmin 2.X</div>
+      <div class="title">Actor Ai</div>
     </div>
     <!-- 一级菜单展示 -->
     <a-menu :selectedKeys="selectedKeys" mode="inline" :theme="theme">

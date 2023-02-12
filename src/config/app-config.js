@@ -25,5 +25,5 @@ export const appDefaultConfig = {
   // 帮助文档
   helpDocFlag: false,
   // 网站名称
-  websiteName: 'AI management system',
+  websiteName: 'ACTOR AI',
 };

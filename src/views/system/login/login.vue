@@ -12,25 +12,24 @@
   <div class="login-container">
     <div class="box-item desc">
       <div class="welcome">
-        <p>欢迎登录 SmartAdmin V2</p>
+        <p>欢迎登录 Actor Ai</p>
         <p class="desc">
-          SmartAdmin 是由 河南·洛阳
-          <a target="_blank" href="https://www.1024lab.net" style="color: white; weight: bolder; font-size: 15px; text-decoration: underline"
-            >1024创新实验室（1024Lab）</a
-          >
-          使用SpringBoot2.x 和 Vue3.2 Setup语法糖、 Composition Api (同时支持JavaScript和TypeScript双版本) ，开发出的一套简洁、易用的中后台解决方案！
+          Actor Ai 基于<a target="_blank" href="https://docs.ultralytics.com/" style="color: white; weight: bolder; font-size: 15px; text-decoration: underline">yolov5/yolov8</a> 进行图像检测
+
+          不读写内存，独有的鼠标算法控制，让您可以定制化特征值，并模拟人工拉枪效果。我们支持多种游戏，并长期更新。目前可选列表：APEX，CSGO
           <br />
+
           <br />
           <span class="setence">
-            致伟大的开发者 ：
+            致亲爱的用户 ：
             <br />
-            &nbsp;&nbsp;&nbsp;&nbsp;我们希望用一套漂亮优雅的代码和一套整洁高效的代码规范，让大家在这浮躁的世界里感受到一股把代码写好的清流 !
+            &nbsp;&nbsp;&nbsp;&nbsp;我们希望用ActorAI的强大，让大家在这浮躁的世界里感受到无敌的寂寞 !
             <br />
-            保持谦逊，保持学习，热爱代码，更热爱生活 !<br />
+            保持谦逊，当个演员，热爱FPS，更热爱生活 !<br />
             永远年轻，永远前行 !<br />
             <span class="author">
-              <a target="_blank" href="https://zhuoda.vip" style="color: white;  font-size: 13px; text-decoration: underline">
-                1024创新实验室-主任：卓大 ( 2022年 · 洛阳 ）
+              <a target="_blank" href="https://ai.limiaomiao.site:8443/" style="color: white;  font-size: 13px; text-decoration: underline">
+                ACTOR AI
               </a>
             </span>
           </span>
@@ -39,11 +38,11 @@
       <div class="app-qr-box">
         <div class="app-qr">
           <img :src="zhuoda" />
-          <span class="qr-desc"> 加微信，骚扰卓大 :) </span>
+          <span class="qr-desc"> 加微信，骚扰ACTOR AI TEAM :) </span>
         </div>
         <div class="app-qr">
           <img :src="xiaozhen" />
-          <marquee  class="qr-desc" scrolldelay="130"> 关注：小镇程序员，了解二三线城市程序员的代码与“钱途”，技术与生活，城市可能无法选择，但未来可以拼搏。</marquee>
+          <marquee  class="qr-desc" scrolldelay="130"> 关注：xxx了解更多，前期BETA测试，享受更多福利。</marquee>
         </div>
       </div>
     </div>
